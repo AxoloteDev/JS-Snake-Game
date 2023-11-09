@@ -8,7 +8,7 @@ document.addEventListener("keydown", (event)=>{
         index++;
 
         if(index >= itens.length){
-            itens[2].classList.remove("select");
+            itens[1].classList.remove("select");
             index = 0;
         }
 
@@ -24,7 +24,7 @@ document.addEventListener("keydown", (event)=>{
 
         if(index < 0){
             itens[0].classList.remove("select");
-            index = 2;
+            index = 1;
         }
 
         itens[index].classList.add("select"); 

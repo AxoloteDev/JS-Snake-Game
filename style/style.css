@@ -1,26 +1,50 @@
+/*? Geral configuration*/
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/*? Menu style */
+@font-face {
+    font-family: "vt323";
+    src: url('/fonts/VT323-Regular.ttf');
+}
 
-nav{
+:root{
+    --Primary_color: rgb(179, 221, 101);
+    --text: "vt323", sans-serif;
+}
+
+body{
+    font-size: 16px;
+    background-color: var(--Primary_color);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+/*? Title ajust*/
+
+#title{
+    margin-bottom: 50px;
+}
+
+/*? Menu style */
+
 ul{
     list-style: none;
+    margin-bottom: 50px;
 }
 
 li{
     margin-bottom: 10px;
     padding: 5px;
     cursor: pointer;
+    font: normal 1.8em var(--text);
+    color: white;
 }
 
 li:last-child{
@@ -28,5 +52,7 @@ li:last-child{
 }
 
 .select::before{
-    content: ">";
+    content: url("/images/arrow.png");
+    position: relative;
+    left: -10px;
 }
