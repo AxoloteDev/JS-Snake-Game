@@ -1,3 +1,5 @@
+import { loadGame } from './load.js';
+
 const menu = document.querySelector("ul");
 let itens = menu.querySelectorAll("li");
 let index = 0;
@@ -36,13 +38,10 @@ document.addEventListener("keydown", (event)=>{
 
     if(event.key === "Enter"){
         if(itens[0].classList == "select"){
-            console.log("opção 1");
+            loadGame();
         }
         if(itens[1].classList == "select"){
             console.log("opção 2");
-        }
-        if(itens[2].classList == "select"){
-            console.log("opção 3");
         }
     }
 });
@@ -58,13 +57,10 @@ itens.forEach((iten)=>{
 
         iten.addEventListener("click", () => {
             if(itens[0].classList == "select"){
-                console.log("opção 1");
+                loadGame();
             }
             if(itens[1].classList == "select"){
                 console.log("opção 2");
-            }
-            if(itens[2].classList == "select"){
-                console.log("opção 3");
             }
         })
     })

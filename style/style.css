@@ -12,7 +12,9 @@
 }
 
 :root{
-    --Primary_color: rgb(179, 221, 101);
+    --Primary_color: #b3dd65;
+    --Second_color:  #8bb43e;
+    --Tertiary_color:  #739633;
     --text: "vt323", sans-serif;
 }
 
@@ -55,4 +57,66 @@ li:last-child{
     content: url("/images/arrow.png");
     position: relative;
     left: -10px;
+}
+
+/*? Game Board style*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 80vmin;
+    width: 80vmin;
+}
+
+#grid{
+    background-color: var(--Tertiary_color);
+    height:75%;
+    width: 100%;
+    display: grid;
+}
+
+#game{
+    background-color: var(--Second_color);
+    height: 15%;
+    width: 100%;
+    display: flex;
+}
+
+#score{
+    background-color: var(--Second_color);
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*? Game info style*/
+
+.score{
+    font: normal 5vmin var(--text);
+    color: white;
+    margin-left: 15px;
+}
+
+.game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.arrow{
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    color: white;
+    font: normal 5vmin var(--text);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.arrow:active{
+    background-color: #6f9131;
 }
