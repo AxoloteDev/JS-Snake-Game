@@ -1,3 +1,5 @@
+import {main} from './main.js'
+
 const body = document.querySelector('body');
 let board = `
 <main>
@@ -12,8 +14,10 @@ let board = `
   <a class="arrow" id="down">↓</a>
  </div>
 </main>
+<script defer type="module" src="js/main.js"></script>
 `;
 
 export function loadGame(){
     body.innerHTML = board;
+    main();
 }
