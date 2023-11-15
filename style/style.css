@@ -62,7 +62,7 @@ li:last-child{
 /*? Game Board style*/
 
 main{
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 80vmin;
     width: 80vmin;
@@ -126,6 +126,7 @@ main{
 
 .snake{
     background-color: rgb(225, 255, 194);
+    border: 1px solid #6f9131;
 }
 
 .food{

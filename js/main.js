@@ -1,3 +1,6 @@
+import {update as updateSnake, render as renderSneake} from './snake.js';
+const gameBoard = document.querySelector('#grid');
+
 let lastRender = 0;
 const GAME_SPEED = 4;
 
@@ -12,9 +15,9 @@ export function main(currentRender){
 }
 
 function update(){
-
+    updateSnake();
 }
 
 function render(){
-    
+    renderSneake(gameBoard);
 }
