@@ -1,4 +1,5 @@
 import {update as updateSnake, render as renderSneake} from './snake.js';
+import {update as updateFood, render as rederFood} from './food.js';
 
 const gameBoard = document.querySelector('#grid');
 
@@ -17,9 +18,11 @@ export function main(currentRender){
 
 function update(){
     updateSnake();
+    updateFood();
 }
 
 function render(){
     gameBoard.innerHTML = '';
     renderSneake(gameBoard);
+    rederFood(gameBoard);
 }
