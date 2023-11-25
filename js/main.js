@@ -1,4 +1,5 @@
 import {update as updateSnake, render as renderSneake} from './snake.js';
+
 const gameBoard = document.querySelector('#grid');
 
 let lastRender = 0;
