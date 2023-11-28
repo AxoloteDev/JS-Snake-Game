@@ -5,6 +5,7 @@ let snakeBody = [
 ];
 
 let newBody = 0;
+export let score = 0;
 
 export function update(){
     addBody();
@@ -30,6 +31,7 @@ export function render(gameBoard){
 
 export function expandBody(amount){
     newBody += amount;
+    score++;
 }
 
 export function onSnake(position){
@@ -39,7 +41,7 @@ export function onSnake(position){
 }
 
 function equalPosition(position1, position2){
-    return position1.x === position2.x && position1.y === position2.y;
+    return position1.x === position2.x && position1.y === position2.y
 }
 
 function addBody(){

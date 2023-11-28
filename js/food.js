@@ -1,12 +1,13 @@
 import { onSnake, expandBody} from "./snake.js";
+import { gridPosition } from "./board.js";
 
-let foods = {x:11, y:11};
+let foods = randomFood();
 const EXPANSION = 1;
 
 export function update(){
     if(onSnake(foods)){
         expandBody(EXPANSION);
-        foods = {x:11, y:0};
+        foods = randomFood();
     }
 }
 
@@ -16,4 +17,12 @@ export function render(gameBoard){
         food.style.gridColumnStart = foods.x;
         food.classList.add('food');
         gameBoard.appendChild(food);
+}
+
+function randomFood(){
+    let newFood;
+    while(newFood == null || onSnake(newFood)){
+        newFood = gridPosition();
+    }
+    return newFood;
 }
