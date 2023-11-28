@@ -1,7 +1,7 @@
 import { getInput } from "./input.js";
 
 let snakeBody = [
-    {x:11, y:0},
+    {x:11, y:11},
 ];
 
 let newBody = 0;
@@ -19,6 +19,10 @@ export function update(){
     snakeBody[0].y += inputDirection.y;
 }
 
+export function getSnakeHead(){
+    return snakeBody[0];
+}
+
 export function render(gameBoard){
     snakeBody.forEach(part => {
         const player = document.createElement('div');
@@ -34,8 +38,9 @@ export function expandBody(amount){
     score++;
 }
 
-export function onSnake(position){
-    return snakeBody.some(segment => {
+export function onSnake(position, {ignoreHead = false} = {}){
+    return snakeBody.some((segment, index) => {
+        if(ignoreHead && index === 0) return false
         return equalPosition(segment, position);
     })
 }
@@ -49,4 +54,8 @@ function addBody(){
         snakeBody.push({...snakeBody[snakeBody.length - 1]});
     }
     newBody = 0;
+}
+
+export function snakeCollision(){
+    return onSnake(snakeBody[0], {ignoreHead:true});
 }
