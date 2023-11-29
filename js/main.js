@@ -4,6 +4,8 @@ import { gridCollision } from './board.js';
 
 const gameBoard = document.querySelector('#grid');
 const displayScore = document.querySelector('.score');
+const gameOverScreen = document.querySelector('#game-over');
+const reload = document.querySelector('#reload');
 
 let lastRender = 0;
 let gameOver = false;
@@ -11,7 +13,8 @@ const GAME_SPEED = 4;
 
 export function main(currentRender){
     if(gameOver){
-        return alert('Game Over');
+        gameOverScreen.style.display = "flex";
+        return null;
     }
 
     requestAnimationFrame(main);
@@ -39,3 +42,7 @@ function render(){
 function snakeDeath(){
     gameOver = gridCollision(getSnakeHead()) || snakeCollision()
 }
+
+reload.addEventListener('click', ()=>{
+    location.reload();
+});

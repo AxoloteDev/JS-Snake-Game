@@ -41,7 +41,7 @@ document.addEventListener("keydown", (event)=>{
             loadGame();
         }
         if(itens[1].classList == "select"){
-            console.log("opção 2");
+            window.open('https://github.com/AxoloteDev/JS-Snake-game', '_blank');
         }
     }
 });

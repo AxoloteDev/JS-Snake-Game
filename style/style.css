@@ -12,9 +12,9 @@
 }
 
 :root{
-    --Primary_color: #b3dd65;
-    --Second_color:  #8bb43e;
-    --Tertiary_color:  #739633;
+    --Primary_color: #7daa2a;
+    --Second_color:  #68921a;
+    --Tertiary_color:  #4a690f;
     --text: "vt323", sans-serif;
 }
 
@@ -51,6 +51,11 @@ li{
 
 li:last-child{
     margin-bottom: 0px;
+}
+
+li > a{
+    color: white;
+    text-decoration: none
 }
 
 .select::before{
@@ -125,16 +130,49 @@ main{
 /*? Snake style */
 
 .snake{
-    background-color: rgb(225, 255, 194);
+    background-color: #e1ffc2;
     border: 1px solid #6f9131;
 }
 
 .food{
-    background-color: rgb(208, 252, 14);
+    background-image: url(/images/food.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /*? Game over screen */
 
 #game-over{
+    background-color:var(--Second_color);
     display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 40vmin;
+    position: absolute;
+    animation: gameover 0.8s forwards;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-over > h1{
+    z-index: 12;
+    color: white;
+    font: normal 10vmin var(--text);
+}
+
+@keyframes gameover{
+    0%{
+        top: -20%
+    }
+
+    100%{
+        top: 30%;
+    }
+}
+
+#reload{
+    cursor: pointer;
+    margin-top: 3vmin;
+    height: 8vmin;
 }
